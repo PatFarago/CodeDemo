@@ -1,7 +1,7 @@
 import requests
 from twilio.rest import Client
 
-api_key = SECRET
+api_key = "c881524b83d41f7952f7253834655949"
 
 params = {
     "lat": 51.34,
@@ -20,15 +20,3 @@ for hour_data in data["list"]:
         print("Nimm einen Regenschirm mit!")
     else:
         print("Kein Regen")
-
-
-#current_weather = data["list"][0]["weather"][0]["id"]
-#future_weather = data["list"][2]["weather"][0]["id"]
-
-#will_rain = False
- #will_rain = True
-#if will_rain == True:
-#    print("Bring an Umbrella!")
-
-#    elif future_weather < 700:
-#        print("Right now not, but take an Umbrella with you!")
