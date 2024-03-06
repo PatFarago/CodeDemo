@@ -1,7 +1,7 @@
 import requests
 from twilio.rest import Client
 
-#Little API-Call from twilio to get weather information at certain latidute & longitude (here Leipzig, Germany)
+#Little API-Call from twilio to get weather information at certain latitude & longitude (here Leipzig, Germany)
 #to tell you, if you should take an umbrella with you or not
 #Enjoy
 
