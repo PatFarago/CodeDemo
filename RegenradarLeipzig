@@ -1,6 +1,11 @@
 import requests
 from twilio.rest import Client
 
+#Little API-Call from twilio to get weather information at certain latidute & longitude (here Leipzig, Germany)
+#to tell you, if you should take an umbrella with you or not
+#Enjoy
+
+
 api_key = "c881524b83d41f7952f7253834655949"
 
 params = {
