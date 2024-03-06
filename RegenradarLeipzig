@@ -1,0 +1,34 @@
+import requests
+from twilio.rest import Client
+
+api_key = SECRET
+
+params = {
+    "lat": 51.34,
+    "lon": 12.37,
+    "appid": api_key,
+    "cnt": 1,
+}
+
+response = requests.get(url="https://api.openweathermap.org/data/2.5/forecast", params=params)
+response.raise_for_status()
+data = response.json()
+
+for hour_data in data["list"]:
+    condition_code = hour_data["weather"][0]["id"]
+    if int(condition_code) < 700:
+        print("Nimm einen Regenschirm mit!")
+    else:
+        print("Kein Regen")
+
+
+#current_weather = data["list"][0]["weather"][0]["id"]
+#future_weather = data["list"][2]["weather"][0]["id"]
+
+#will_rain = False
+ #will_rain = True
+#if will_rain == True:
+#    print("Bring an Umbrella!")
+
+#    elif future_weather < 700:
+#        print("Right now not, but take an Umbrella with you!")
