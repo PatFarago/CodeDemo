@@ -1,7 +1,10 @@
+# app.py
+
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 
 app = Flask(__name__)
+
 
 # Database initialization
 def initialize_database():
@@ -19,12 +22,15 @@ def initialize_database():
     conn.commit()
     conn.close()
 
+
 # Initialize database
 initialize_database()
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/place_order', methods=['POST'])
 def place_order():
@@ -40,6 +46,7 @@ def place_order():
     conn.close()
 
     return redirect(url_for('index'))
+
 
 @app.route('/pay_bill/<int:table_number>')
 def pay_bill(table_number):
@@ -59,6 +66,7 @@ def pay_bill(table_number):
     conn.close()
 
     return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
